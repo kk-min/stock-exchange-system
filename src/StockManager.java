@@ -22,4 +22,13 @@ public class StockManager {
     public double getQuote(Stock X){
         return this.StockInfo.get(X);
     }
+
+    /**
+     * Updates the quote for a specified stock.
+     * @param X Stock to update its latest traded price
+     * @param price The newest price of Stock X
+     */
+    public void updateQuote(Stock X, double price){
+        this.StockInfo.replace(X, price);
+    }
 }

@@ -80,5 +80,5 @@ public abstract class Order{
         return quantityTotal;
     }
 
-    public abstract void executeTrade();
+    public abstract boolean executeTrade(Order X);
 }

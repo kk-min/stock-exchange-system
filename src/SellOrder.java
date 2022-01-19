@@ -18,7 +18,18 @@ public class SellOrder extends Order{
         super(stockName, quantityTotal);
     }
 
-    public void executeTrade(){
+    public boolean executeTrade(Order buyOrder){
+        double buyQuantity = buyOrder.getQuantityTotal();
 
+        if(this.quantityTotal <= buyQuantity){
+            this.quantityFulfilled = this.quantityTotal;
+            this.orderStatus = STATUS.FILLED;
+            return true;
+        }
+        else{
+            this.quantityFulfilled = buyQuantity;
+            this.orderStatus = STATUS.PARTIAL;
+            return false;
+        }
     }
 }

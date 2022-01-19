@@ -22,9 +22,20 @@ public class BuyOrder extends Order{
         super(stockName, quantityTotal);
     }
 
-    public void executeTrade(HashMap<Stock, ArrayList<Order>> pendingSellOrders, HashMap<Stock, ArrayList<Order>> pendingBuyOrders){
+    public boolean executeTrade(Order sellOrder){ // Assume a matching sell order has already been found
+        double sellQuantity = sellOrder.getQuantityTotal();
 
-        switch(this.orderType){
+        if(this.quantityTotal <= sellQuantity){ // The entire order can be fulfilled
+            this.quantityFulfilled = this.quantityTotal;
+            this.orderStatus = STATUS.FILLED;
+            return true;
+        }
+        else{
+            this.quantityFulfilled = this.quantityTotal - sellQuantity;
+            this.orderStatus = STATUS.PARTIAL;
+            return false;
+        }
+        /*switch(this.orderType){
             case MARKET:
                 if (!pendingSellOrders.containsKey(this.orderStock) || (pendingSellOrders.get(this.orderStock).isEmpty())){ // No selling lists exist or empty list
                     System.out.printf("There is currently no market sell order for Stock %s.\n", this.orderStock.getStockName());
@@ -46,6 +57,6 @@ public class BuyOrder extends Order{
                 else{
 
                 }
-        }
+        }*/
     }
 }
