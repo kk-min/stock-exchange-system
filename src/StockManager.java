@@ -25,6 +25,29 @@ public class StockManager {
     }
 
     public void addOrder(Order orderToAdd){
-        switch(orderToAdd.get)
+
+    }
+
+    public double getBid(Stock X){
+        ArrayList<Order> buyList = pendingBuyOrders.get(X); // Get the pending buy orders for Stock X
+
+    }
+
+    public double getAsk(Stock X){
+        ArrayList<Order> sellList = pendingSellOrders.get(X) // Get the pending sell orders for Stock X
+
+    }
+
+    /**
+     * Returns the last traded value of a stock.
+     * @param X The stock whose last traded value we are interested in
+     * @return Last traded value of Stock X
+     */
+    public double getQuote(Stock X){
+        return this.StockInfo.get(X);
+    }
+
+    public void receiveOrder(TradeExecutable X){
+        X.executeTrade();
     }
 }

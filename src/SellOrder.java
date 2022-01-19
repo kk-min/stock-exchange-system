@@ -18,6 +18,6 @@ public class SellOrder extends Order{
         super(stockName, quantityTotal);
     }
 
-    public void execute(Order X) {
+    public void executeTrade() {
     }
 }

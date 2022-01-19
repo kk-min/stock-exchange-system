@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Stock-Exchange-System.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BuyOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OrderManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SellOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StockManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TradeExecutable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuyOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SellOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

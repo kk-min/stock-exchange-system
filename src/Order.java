@@ -1,4 +1,4 @@
-public abstract class Order {
+public abstract class Order implements TradeExecutable{
     public enum STATUS{PENDING, PARTIAL, FILLED};
     public enum TYPE{MARKET, LIMIT};
     /**
@@ -80,5 +80,5 @@ public abstract class Order {
         return quantityTotal;
     }
 
-    public abstract void execute(Order X);
+    public abstract void executeTrade();
 }
