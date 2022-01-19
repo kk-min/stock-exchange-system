@@ -41,6 +41,10 @@ public class BuyOrder extends Order{
                     System.out.printf("There is currently no market sell order for Stock %s.\n", this.orderStock.getStockName());
                     return;
                 }
+                else{
+                    ArrayList<Order> sellList = pendingSellOrders.get(this.orderStock);
+                    Order marketSellOrder =
+                }
                 break;
             case LIMIT:
                 if (!pendingSellOrders.containsKey(this.orderStock) || (pendingSellOrders.get(this.orderStock).isEmpty())){ // No selling lists exist or empty list

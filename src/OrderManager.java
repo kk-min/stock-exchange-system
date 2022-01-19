@@ -81,7 +81,14 @@ public class OrderManager {
      * @param X The order to receive and execute.
      */
     public void receiveOrder(Order X){
-        X.executeTrade();
+        switch(X.getOrderType()){
+            case LIMIT:
+
+                break;
+            case MARKET:
+
+                break;
+        }
     }
 
     public HashMap<Stock, ArrayList<Order>> getPendingBuyOrders(){
