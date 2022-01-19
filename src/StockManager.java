@@ -28,14 +28,36 @@ public class StockManager {
 
     }
 
+    /**
+     * Returns the current highest pending buy price
+     * @param X The stock that we want to check the buy price for.
+     * @return The current highest pending buy price
+     */
     public double getBid(Stock X){
         ArrayList<Order> buyList = pendingBuyOrders.get(X); // Get the pending buy orders for Stock X
-
+        double maxPrice = -1; // Actual stock price will never go below 0, so we can set initialize with -1 as the minimum
+        for (Order pendingOrder : buyList){
+            if(pendingOrder.getPrice() > maxPrice){
+                maxPrice = pendingOrder.getPrice(); // Update the max price if a higher one is found in the pending buy list
+            }
+        }
+        return maxPrice;
     }
 
+    /**
+     * Returns the current lowest pending ask price.
+     * @param X The stock that we want to check the ask price for.
+     * @return The current lowest pending ask price.
+     */
     public double getAsk(Stock X){
-        ArrayList<Order> sellList = pendingSellOrders.get(X) // Get the pending sell orders for Stock X
-
+        ArrayList<Order> sellList = pendingSellOrders.get(X); // Get the pending sell orders for Stock X
+        double minimumPrice = Double.MAX_VALUE;
+        for (Order pendingOrder : sellList) {
+            if(pendingOrder.getPrice() < minimumPrice){
+                minimumPrice = pendingOrder.getPrice(); // Update the minimum price if a lower one is found in the pending list
+            }
+        }
+        return minimumPrice;
     }
 
     /**
