@@ -1,30 +1,30 @@
-public abstract class Order implements TradeExecutable{
+public abstract class Order{
     public enum STATUS{PENDING, PARTIAL, FILLED};
     public enum TYPE{MARKET, LIMIT};
     /**
      * The status of the order, whether it is not fulfilled (PENDING), partially fulfilled (PARTIAL) or completely fulfilled (FILLED).
      */
-    private STATUS orderStatus;
+    protected STATUS orderStatus;
     /**
      * The type of order, whether it is a market order (takes whatever price is available) or it is a limit order with a specified price.
      */
-    private TYPE orderType;
+    protected TYPE orderType;
     /**
      * The price of the stock the order is trading at, if applicable.
      */
-    private double price;
+    protected double price;
     /**
      * The total quantity of the stock being traded.
      */
-    private double quantityTotal;
+    protected double quantityTotal;
     /**
      * The total quantity of the stock that has been successfully traded.
      */
-    private double quantityFulfilled;
+    protected double quantityFulfilled;
     /**
      * The stock that the order is trading.
      */
-    private Stock orderStock;
+    protected Stock orderStock;
 
     /**
      * Constructor for the Order class. (Limit Order)

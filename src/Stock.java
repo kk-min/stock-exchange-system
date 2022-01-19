@@ -11,4 +11,12 @@ public class Stock {
     public Stock(String name){
         this.stockName = name;
     }
+
+    /**
+     * Returns the name of the stock.
+     * @return name of the stock
+     */
+    public String getStockName() {
+        return stockName;
+    }
 }

@@ -1,3 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class BuyOrder extends Order{
     /**
      * Constructor for the BuyOrder class. (Limit Order)
@@ -18,7 +22,30 @@ public class BuyOrder extends Order{
         super(stockName, quantityTotal);
     }
 
-    public void executeTrade(){
+    public void executeTrade(HashMap<Stock, ArrayList<Order>> pendingSellOrders, HashMap<Stock, ArrayList<Order>> pendingBuyOrders){
 
+        switch(this.orderType){
+            case MARKET:
+                if (!pendingSellOrders.containsKey(this.orderStock) || (pendingSellOrders.get(this.orderStock).isEmpty())){ // No selling lists exist or empty list
+                    System.out.printf("There is currently no market sell order for Stock %s.\n", this.orderStock.getStockName());
+                    return;
+                }
+                break;
+            case LIMIT:
+                if (!pendingSellOrders.containsKey(this.orderStock) || (pendingSellOrders.get(this.orderStock).isEmpty())){ // No selling lists exist or empty list
+                    if (pendingBuyOrders.get(this.orderStock) == null){ // No buying list exists for this stock
+                        ArrayList<Order> pendingList = new ArrayList<Order>();
+                        pendingList.add(this);
+                        pendingBuyOrders.put(this.orderStock, pendingList);
+                    }
+                    else{
+                        pendingBuyOrders.get(this.orderStock).add(this);
+                    }
+                    return;
+                }
+                else{
+
+                }
+        }
     }
 }
