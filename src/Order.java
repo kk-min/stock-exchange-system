@@ -1,4 +1,6 @@
-public abstract class Order{
+import java.util.ArrayList;
+
+public abstract class Order implements Comparable<Order>{
     public enum STATUS{PENDING, PARTIAL, FILLED};
     public enum TYPE{MARKET, LIMIT};
     /**
@@ -8,7 +10,7 @@ public abstract class Order{
     /**
      * The type of order, whether it is a market order (takes whatever price is available) or it is a limit order with a specified price.
      */
-    protected TYPE orderType;
+    protected final TYPE orderType;
     /**
      * The price of the stock the order is trading at, if applicable.
      */
@@ -16,7 +18,7 @@ public abstract class Order{
     /**
      * The total quantity of the stock being traded.
      */
-    protected double quantityTotal;
+    protected final double quantityTotal;
     /**
      * The total quantity of the stock that has been successfully traded.
      */
@@ -24,7 +26,7 @@ public abstract class Order{
     /**
      * The stock that the order is trading.
      */
-    protected Stock orderStock;
+    protected final Stock orderStock;
 
     /**
      * Constructor for the Order class. (Limit Order)
@@ -73,12 +75,37 @@ public abstract class Order{
     }
 
     /**
-     * Acessor method for the total quantity of stock specified in the order.
-     * @return The total quantity of stock being traded in the order.
+     * Acessor method for the total quantity requested of stock specified in the order.
+     * @return The total quantity requested of stock being traded in the order.
      */
     public double getQuantityTotal() {
-        return quantityTotal;
+        return this.quantityTotal;
     }
 
-    public abstract boolean executeTrade(Order X);
+    /**
+     * Accessor method for the total quantity fulfilled of stock specified in the order.
+     * @return The total quantity fulfilled of stock being traded in this order.
+     */
+    public double getQuantityFulfilled(){
+        return this.quantityFulfilled;
+    }
+
+    public Stock getOrderStock() {
+        return orderStock;
+    }
+
+    /**
+     * Executes the trade with a matching buy/sell order.
+     * @param X The matching buy/sell order
+     * @return true: the order has been completely fulfilled. false: the order has been partially
+     *
+     * fulfilled.
+     */
+    public abstract void executeTrade(Order X, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
+
+    public abstract Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
+
+    public int compareTo(Order anotherOrder){
+        return Double.compare(this.price, anotherOrder.getPrice());
+    }
 }

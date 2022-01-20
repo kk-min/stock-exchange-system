@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class BuyOrder extends Order{
@@ -22,45 +23,51 @@ public class BuyOrder extends Order{
         super(stockName, quantityTotal);
     }
 
-    public boolean executeTrade(Order sellOrder){ // Assume a matching sell order has already been found
-        double sellQuantity = sellOrder.getQuantityTotal();
+    public void executeTrade(Order sellOrder, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){ // Assume a matching sell order has already been found
+        if (sellOrder == null){
+            if(!pendingBuyList.contains(this)){
+                pendingBuyList.add(this);
+                Collections.sort(pendingBuyList);
+                Collections.reverse(pendingBuyList);
+            }
+            return;
+        }
 
-        if(this.quantityTotal <= sellQuantity){ // The entire order can be fulfilled
+        double sellQuantity = sellOrder.getQuantityTotal() - sellOrder.getQuantityFulfilled();
+        double buyQuantity = this.quantityTotal - this.quantityFulfilled;
+
+        if(buyQuantity <= sellQuantity){ // The entire order can be fulfilled
             this.quantityFulfilled = this.quantityTotal;
             this.orderStatus = STATUS.FILLED;
-            return true;
+            pendingBuyList.remove(this);
+        }
+        else{ // The order can only be partially fulfilled.
+            this.quantityFulfilled += sellQuantity;
+            this.orderStatus = STATUS.PARTIAL;
+            if(!pendingBuyList.contains(this)){
+                pendingBuyList.add(this);
+                Collections.sort(pendingBuyList);
+                Collections.reverse(pendingBuyList);
+            }
+        }
+    }
+
+    public Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){
+        if (pendingSellList.isEmpty()){
+            return null;
         }
         else{
-            this.quantityFulfilled = this.quantityTotal - sellQuantity;
-            this.orderStatus = STATUS.PARTIAL;
-            return false;
+            Order entry = pendingSellList.get(0); // The first entry will always have the smallest sell price
+            switch(this.orderType) {
+                case MARKET:
+                    return entry;
+                case LIMIT:
+                    if (entry.getPrice() <= this.price) {
+                        return entry;
+                    }
+                    break;
+            }
         }
-        /*switch(this.orderType){
-            case MARKET:
-                if (!pendingSellOrders.containsKey(this.orderStock) || (pendingSellOrders.get(this.orderStock).isEmpty())){ // No selling lists exist or empty list
-                    System.out.printf("There is currently no market sell order for Stock %s.\n", this.orderStock.getStockName());
-                    return;
-                }
-                else{
-                    ArrayList<Order> sellList = pendingSellOrders.get(this.orderStock);
-                    Order marketSellOrder =
-                }
-                break;
-            case LIMIT:
-                if (!pendingSellOrders.containsKey(this.orderStock) || (pendingSellOrders.get(this.orderStock).isEmpty())){ // No selling lists exist or empty list
-                    if (pendingBuyOrders.get(this.orderStock) == null){ // No buying list exists for this stock
-                        ArrayList<Order> pendingList = new ArrayList<Order>();
-                        pendingList.add(this);
-                        pendingBuyOrders.put(this.orderStock, pendingList);
-                    }
-                    else{
-                        pendingBuyOrders.get(this.orderStock).add(this);
-                    }
-                    return;
-                }
-                else{
-
-                }
-        }*/
+        return null;
     }
 }

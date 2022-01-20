@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
 public class SellOrder extends Order{
     /**
      * Constructor for SellOrder. (Limit Order)
@@ -18,18 +22,49 @@ public class SellOrder extends Order{
         super(stockName, quantityTotal);
     }
 
-    public boolean executeTrade(Order buyOrder){
-        double buyQuantity = buyOrder.getQuantityTotal();
+    public void executeTrade(Order buyOrder, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){
+        if (buyOrder == null){
+            if (!pendingSellList.contains(this)) {
+                pendingSellList.add(this);
+                Collections.sort(pendingSellList);
+            }
+            return;
+        }
 
-        if(this.quantityTotal <= buyQuantity){
+        double buyQuantity = buyOrder.getQuantityTotal();
+        double sellQuantity = this.quantityTotal-this.quantityFulfilled;
+
+        if(sellQuantity <= buyQuantity){
             this.quantityFulfilled = this.quantityTotal;
             this.orderStatus = STATUS.FILLED;
-            return true;
+            pendingSellList.remove(this);
         }
         else{
             this.quantityFulfilled = buyQuantity;
             this.orderStatus = STATUS.PARTIAL;
-            return false;
+            if(!pendingSellList.contains(this)){
+                pendingSellList.add(this);
+                Collections.sort(pendingSellList);
+            }
         }
+    }
+
+    public Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){
+        if (pendingBuyList.isEmpty()){ // No pending sell orders for this stock
+            return null;
+        }
+        else{
+            Order entry = pendingBuyList.get(0); // The first entry will always have the largest buy price
+            switch(this.orderType) {
+                case MARKET:
+                    return entry;
+                case LIMIT:
+                    if (entry.getPrice() >= this.price) {
+                        return entry;
+                    }
+                    break;
+            }
+        }
+        return null;
     }
 }

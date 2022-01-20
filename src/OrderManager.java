@@ -81,14 +81,21 @@ public class OrderManager {
      * @param X The order to receive and execute.
      */
     public void receiveOrder(Order X){
-        switch(X.getOrderType()){
-            case LIMIT:
-
-                break;
-            case MARKET:
-
-                break;
+        addToOrderHistory(X);
+        ArrayList<Order> pendingBuyList = pendingBuyOrders.get(X.getOrderStock());
+        if (pendingBuyList == null){
+            pendingBuyList = new ArrayList<Order>();
+            pendingBuyOrders.put(X.getOrderStock(), pendingBuyList);
         }
+        ArrayList<Order> pendingSellList = pendingSellOrders.get(X.getOrderStock());
+        if (pendingSellList == null){
+            pendingSellList = new ArrayList<Order>();
+            pendingSellOrders.put(X.getOrderStock(), pendingSellList);
+        }
+
+        Order matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
+        X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
+        matchingOrder.executeTrade(X, pendingBuyList, pendingSellList);
     }
 
     public HashMap<Stock, ArrayList<Order>> getPendingBuyOrders(){
