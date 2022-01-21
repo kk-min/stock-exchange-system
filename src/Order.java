@@ -104,8 +104,12 @@ public abstract class Order implements Comparable<Order>{
     public abstract void executeTrade(Order X, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
 
     public abstract Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
+    public void setQuantityFulfilled(double quantityFulfilled) {
+        this.quantityFulfilled = quantityFulfilled;
+    }
 
     public int compareTo(Order anotherOrder){
         return Double.compare(this.price, anotherOrder.getPrice());
     }
+
 }

@@ -40,6 +40,11 @@ public class BuyOrder extends Order{
             this.quantityFulfilled = this.quantityTotal;
             this.orderStatus = STATUS.FILLED;
             pendingBuyList.remove(this);
+
+            sellOrder.setQuantityFulfilled(sellOrder.getQuantityFulfilled()+buyQuantity);
+            if(sellOrder.getQuantityTotal() == sellOrder.getQuantityFulfilled()){
+                pendingSellList.remove(sellOrder);
+            }
         }
         else{ // The order can only be partially fulfilled.
             this.quantityFulfilled += sellQuantity;
@@ -49,6 +54,9 @@ public class BuyOrder extends Order{
                 Collections.sort(pendingBuyList);
                 Collections.reverse(pendingBuyList);
             }
+
+            sellOrder.setQuantityFulfilled(sellOrder.getQuantityTotal());
+            pendingSellList.remove(sellOrder);
         }
     }
 

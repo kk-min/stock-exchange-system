@@ -31,13 +31,18 @@ public class SellOrder extends Order{
             return;
         }
 
-        double buyQuantity = buyOrder.getQuantityTotal();
+        double buyQuantity = buyOrder.getQuantityTotal() - buyOrder.getQuantityFulfilled();
         double sellQuantity = this.quantityTotal-this.quantityFulfilled;
 
         if(sellQuantity <= buyQuantity){
             this.quantityFulfilled = this.quantityTotal;
             this.orderStatus = STATUS.FILLED;
             pendingSellList.remove(this);
+
+            buyOrder.setQuantityFulfilled(buyOrder.getQuantityFulfilled()+sellQuantity);
+            if(buyOrder.getQuantityTotal() == buyOrder.getQuantityFulfilled()){
+                pendingBuyList.remove(buyOrder);
+            }
         }
         else{
             this.quantityFulfilled = buyQuantity;
@@ -46,6 +51,9 @@ public class SellOrder extends Order{
                 pendingSellList.add(this);
                 Collections.sort(pendingSellList);
             }
+
+            buyOrder.setQuantityFulfilled(buyOrder.getQuantityTotal());
+            pendingBuyList.remove(buyOrder);
         }
     }
 

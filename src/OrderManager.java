@@ -16,17 +16,19 @@ public class OrderManager {
     /**
      * A HashMap that keeps track of the list of currently pending BuyOrders in chronological order.
      */
-    HashMap<Stock, ArrayList<Order>> pendingBuyOrders;
+    HashMap<String, ArrayList<Order>> pendingBuyOrders;
     /**
      * A HashMap that keeps track of the list of currently pending SellOrders in chronological order.
      */
-    HashMap<Stock, ArrayList<Order>> pendingSellOrders;
+    HashMap<String, ArrayList<Order>> pendingSellOrders;
 
     /**
      * Constructor for OrderManager.
      */
      public OrderManager(){
-        this.orderHistory = new ArrayList<Order>();
+         this.orderHistory = new ArrayList<Order>();
+         this.pendingBuyOrders = new HashMap<String, ArrayList<Order>>();
+         this.pendingSellOrders = new HashMap<String, ArrayList<Order>>();
      }
 
     /**
@@ -50,7 +52,7 @@ public class OrderManager {
      * @return The current highest pending buy price
      */
     public double getBid(Stock X){
-        ArrayList<Order> buyList = pendingBuyOrders.get(X); // Get the pending buy orders for Stock X
+        ArrayList<Order> buyList = pendingBuyOrders.get(X.getStockName()); // Get the pending buy orders for Stock X
         double maxPrice = -1; // Actual stock price will never go below 0, so we can set initialize with -1 as the minimum
         for (Order pendingOrder : buyList){
             if(pendingOrder.getPrice() > maxPrice){
@@ -66,7 +68,7 @@ public class OrderManager {
      * @return The current lowest pending ask price.
      */
     public double getAsk(Stock X){
-        ArrayList<Order> sellList = pendingSellOrders.get(X); // Get the pending sell orders for Stock X
+        ArrayList<Order> sellList = pendingSellOrders.get(X.getStockName()); // Get the pending sell orders for Stock X
         double minimumPrice = Double.MAX_VALUE;
         for (Order pendingOrder : sellList) {
             if(pendingOrder.getPrice() < minimumPrice){
@@ -82,27 +84,27 @@ public class OrderManager {
      */
     public void receiveOrder(Order X){
         addToOrderHistory(X);
-        ArrayList<Order> pendingBuyList = pendingBuyOrders.get(X.getOrderStock());
+        Stock targetStock = X.getOrderStock();
+        ArrayList<Order> pendingBuyList = pendingBuyOrders.get(targetStock.getStockName());
         if (pendingBuyList == null){
             pendingBuyList = new ArrayList<Order>();
-            pendingBuyOrders.put(X.getOrderStock(), pendingBuyList);
+            pendingBuyOrders.put(targetStock.getStockName(), pendingBuyList);
         }
-        ArrayList<Order> pendingSellList = pendingSellOrders.get(X.getOrderStock());
+        ArrayList<Order> pendingSellList = pendingSellOrders.get(targetStock.getStockName());
         if (pendingSellList == null){
             pendingSellList = new ArrayList<Order>();
-            pendingSellOrders.put(X.getOrderStock(), pendingSellList);
+            pendingSellOrders.put(targetStock.getStockName(), pendingSellList);
         }
 
         Order matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
         X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
-        matchingOrder.executeTrade(X, pendingBuyList, pendingSellList);
     }
 
-    public HashMap<Stock, ArrayList<Order>> getPendingBuyOrders(){
+    public HashMap<String, ArrayList<Order>> getPendingBuyOrders(){
         return this.pendingBuyOrders;
     }
 
-    public HashMap<Stock, ArrayList<Order>> getPendingSellOrders() {
+    public HashMap<String, ArrayList<Order>> getPendingSellOrders() {
         return pendingSellOrders;
     }
 }
