@@ -3,9 +3,10 @@ import java.util.ArrayList;
 public class PrintableOrderHistory implements Printable{
     ArrayList<Order> orderHistory;
 
-    public PrintableOrderHistory(ArrayList<Order> orderHistory){
-        this.orderHistory = orderHistory;
+    public PrintableOrderHistory(){
+        this.orderHistory = OrderManager.getOrderHistory();
     }
+
     public void print(){
         int entryNumber = 1;
         for (Order entry : this.orderHistory){
