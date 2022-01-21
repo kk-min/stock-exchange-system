@@ -78,7 +78,6 @@ public class OrderManager {
      * @return true if order received successfully, false otherwise
      */
     public static boolean receiveOrder(Order X){
-        addToOrderHistory(X);
         String stockName = X.getStockName();
         ArrayList<Order> pendingBuyList = pendingBuyOrders.get(stockName);
         if (pendingBuyList == null){
@@ -98,6 +97,7 @@ public class OrderManager {
             return false;
         }
         X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
+        addToOrderHistory(X);
         return true;
     }
 
