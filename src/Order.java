@@ -112,6 +112,10 @@ public abstract class Order implements Comparable<Order>{
         this.quantityFulfilled = quantityFulfilled;
     }
 
+    public void setOrderStatus(STATUS newStatus){
+        this.orderStatus = newStatus;
+    }
+
     public abstract String identify();
 
     public int compareTo(Order anotherOrder){

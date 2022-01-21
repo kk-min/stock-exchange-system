@@ -44,10 +44,14 @@ public class BuyOrder extends Order{
 
             sellOrder.setQuantityFulfilled(sellOrder.getQuantityFulfilled()+buyQuantity);
             if(sellOrder.getQuantityTotal() == sellOrder.getQuantityFulfilled()){
+                sellOrder.setOrderStatus(STATUS.FILLED);
                 pendingSellList.remove(sellOrder);
             }
+            else{
+                sellOrder.setOrderStatus(STATUS.PARTIAL);
+            }
         }
-        else{ // The order can only be partially fulfilled.
+        else{ // The order can only be partially fulfilled. This implies that the corresponding order can be completely fulfilled.
             this.quantityFulfilled += sellQuantity;
             this.orderStatus = STATUS.PARTIAL;
             if(!pendingBuyList.contains(this)){
@@ -57,6 +61,7 @@ public class BuyOrder extends Order{
             }
 
             sellOrder.setQuantityFulfilled(sellOrder.getQuantityTotal());
+            sellOrder.setOrderStatus(STATUS.FILLED);
             pendingSellList.remove(sellOrder);
         }
         StockManager.updateQuote(this.stockName, this.price); // Update the latest order for this stock in Stock Manager
