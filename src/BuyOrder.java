@@ -70,4 +70,8 @@ public class BuyOrder extends Order{
         }
         return null;
     }
+
+    public String identify(){
+        return "BUY";
+    }
 }

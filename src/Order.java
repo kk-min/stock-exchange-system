@@ -26,7 +26,7 @@ public abstract class Order implements Comparable<Order>{
     /**
      * The stock that the order is trading.
      */
-    protected final Stock orderStock;
+    protected final String stockName;
 
     /**
      * Constructor for the Order class. (Limit Order)
@@ -38,7 +38,7 @@ public abstract class Order implements Comparable<Order>{
         this.orderStatus = STATUS.PENDING;
         this.orderType = TYPE.LIMIT;
 
-        this.orderStock = new Stock(stockName);
+        this.stockName = stockName;
         this.price = price;
         this.quantityTotal = quantityTotal;
         this.quantityFulfilled = 0; // An order is always created with 0 quantity of fulfilled stock
@@ -53,7 +53,7 @@ public abstract class Order implements Comparable<Order>{
         this.orderStatus = STATUS.PENDING;
         this.orderType = TYPE.MARKET;
 
-        this.orderStock = new Stock(stockName);
+        this.stockName = stockName;
         this.quantityTotal = quantityTotal;
         this.quantityFulfilled = 0; // An order is always created with 0 quantity of fulfilled stock
     }
@@ -90,8 +90,12 @@ public abstract class Order implements Comparable<Order>{
         return this.quantityFulfilled;
     }
 
-    public Stock getOrderStock() {
-        return orderStock;
+    public String getStockName() {
+        return stockName;
+    }
+
+    public STATUS getOrderStatus() {
+        return orderStatus;
     }
 
     /**
@@ -105,7 +109,10 @@ public abstract class Order implements Comparable<Order>{
 
     public abstract Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
 
+    public abstract String identify();
+
     public int compareTo(Order anotherOrder){
         return Double.compare(this.price, anotherOrder.getPrice());
     }
+
 }
