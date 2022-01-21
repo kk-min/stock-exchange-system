@@ -75,4 +75,8 @@ public class SellOrder extends Order{
         }
         return null;
     }
+
+    public String identify(){
+        return "SELL";
+    }
 }
