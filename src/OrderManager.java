@@ -77,7 +77,7 @@ public class OrderManager {
      * @param X The order to receive and execute.
      * @return true if order received successfully, false otherwise
      */
-    public static void receiveOrder(Order X){
+    public static boolean receiveOrder(Order X){
         addToOrderHistory(X);
         String stockName = X.getStockName();
         ArrayList<Order> pendingBuyList = pendingBuyOrders.get(stockName);
@@ -95,9 +95,10 @@ public class OrderManager {
         if ((matchingOrder == null) && (X.getOrderType() == Order.TYPE.MARKET)){
             // If there is no matching order and it was a market order, we need to reject.
             System.out.println("There are currently no available trades for this stock.");
-            return;
+            return false;
         }
         X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
+        return true;
     }
 
 

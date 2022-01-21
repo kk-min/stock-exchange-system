@@ -27,15 +27,17 @@ public class TradeLogicUnit implements LogicUnit{
                     switch (typeSelection) {
                         case 1 -> {
                             buyOrder = new BuyOrder(stockName, quantity);
-                            OrderManager.receiveOrder(buyOrder);
-                            System.out.printf("You have placed a market buy order for %.2f %s shares.\n", quantity, stockName);
+                            if(OrderManager.receiveOrder(buyOrder)) {
+                                System.out.printf("You have placed a market buy order for %.2f %s shares.\n", quantity, stockName);
+                            }
                         }
                         case 2 -> {
                             System.out.println("Enter desired price: ");
                             double desiredPrice = inputMachine.nextDouble();
                             buyOrder = new BuyOrder(stockName, desiredPrice, quantity);
-                            OrderManager.receiveOrder(buyOrder);
-                            System.out.printf("You have placed a limit buy order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
+                            if(OrderManager.receiveOrder(buyOrder)) {
+                                System.out.printf("You have placed a limit buy order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
+                            }
                         }
                     }
                     break;
@@ -49,16 +51,17 @@ public class TradeLogicUnit implements LogicUnit{
                     switch (typeSelection) {
                         case 1 -> {
                             sellOrder = new SellOrder(stockName, quantity);
-                            OrderManager.receiveOrder(sellOrder);
-                            System.out.printf("You have placed a market sell order for %.2f %s shares.\n", quantity, stockName);
+                            if(OrderManager.receiveOrder(sellOrder)) {
+                                System.out.printf("You have placed a market sell order for %.2f %s shares.\n", quantity, stockName);
+                            }
                         }
                         case 2 -> {
                             System.out.println("Enter desired price: ");
                             double desiredPrice = inputMachine.nextDouble();
                             sellOrder = new SellOrder(stockName, desiredPrice, quantity);
-                            OrderManager.receiveOrder(sellOrder);
-                            System.out.printf("You have placed a limit sell order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
-                            System.out.println();
+                            if (OrderManager.receiveOrder(sellOrder)) {
+                                System.out.printf("You have placed a limit sell order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
+                            }
                         }
                     }
                     break;
