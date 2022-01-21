@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrintableOrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableOrderHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TradeLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TradeLogicUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
