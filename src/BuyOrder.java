@@ -23,6 +23,7 @@ public class BuyOrder extends Order{
         super(stockName, quantityTotal);
     }
 
+    @Override
     public void executeTrade(Order sellOrder, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){ // Assume a matching sell order has already been found
         if (sellOrder == null){
             if(!pendingBuyList.contains(this)){
@@ -58,8 +59,10 @@ public class BuyOrder extends Order{
             sellOrder.setQuantityFulfilled(sellOrder.getQuantityTotal());
             pendingSellList.remove(sellOrder);
         }
+        StockManager.updateQuote(this.stockName, this.price); // Update the latest order for this stock in Stock Manager
     }
 
+    @Override
     public Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){
         if (pendingSellList.isEmpty()){
             return null;

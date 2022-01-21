@@ -1,10 +1,10 @@
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class TradeLogic {
-    private static final Scanner inputMachine = new Scanner(System.in);
+public class TradeLogicUnit implements LogicUnit{
 
-    public static void executeLogic(){
+    @Override
+    public void executeLogic(){
         int userInput = -1;
         while(userInput != 3){
             String stockName;

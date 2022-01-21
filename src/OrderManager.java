@@ -39,7 +39,7 @@ public class OrderManager {
      }
     /**
      * Returns the current highest pending buy price
-     * @param X The stock that we want to check the buy price for.
+     * @param X The stock that we want to check the buy price for. Returns -1 if none is found.
      * @return The current highest pending buy price
      */
     public static double getBid(String X){
@@ -55,7 +55,7 @@ public class OrderManager {
 
     /**
      * Returns the current lowest pending ask price.
-     * @param X The stock that we want to check the ask price for.
+     * @param X The stock that we want to check the ask price for. Returns -1 if none is found.
      * @return The current lowest pending ask price.
      */
     public static double getAsk(String X){
@@ -65,6 +65,9 @@ public class OrderManager {
             if(pendingOrder.getPrice() < minimumPrice){
                 minimumPrice = pendingOrder.getPrice(); // Update the minimum price if a lower one is found in the pending list
             }
+        }
+        if (minimumPrice == Double.MAX_VALUE){ // No records found
+            return -1;
         }
         return minimumPrice;
     }

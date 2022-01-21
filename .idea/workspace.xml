@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrintableOrderMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TradeLogic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LogicUnit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/QuoteLogicUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuyOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrintableOrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableOrderHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrintableQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableQuote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SellOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TradeLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TradeLogicUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
