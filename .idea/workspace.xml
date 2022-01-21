@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LogicUnit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QuoteLogicUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuyOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrintableQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableQuote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SellOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StockManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TradeLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TradeLogicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrintableOrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableOrderHistory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +45,14 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainApp">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainApp" />
+      <module name="Stock-Exchange-System" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestUnit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestUnit" />
       <module name="Stock-Exchange-System" />
@@ -64,6 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainApp" />
         <item itemvalue="Application.TestUnit" />
       </list>
     </recent_temporary>

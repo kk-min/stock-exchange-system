@@ -8,6 +8,10 @@ public class PrintableOrderHistory implements Printable{
     }
 
     public void print(){
+        if (this.orderHistory.isEmpty()){
+            System.out.println("There are no orders to view.");
+            return;
+        }
         int entryNumber = 1;
         for (Order entry : this.orderHistory){
             String type = switch(entry.getOrderType()) {
