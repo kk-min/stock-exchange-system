@@ -32,7 +32,7 @@ public class TradeLogicUnit implements LogicUnit{
                             }
                         }
                         case 2 -> {
-                            System.out.println("Enter desired price: ");
+                            System.out.print("Enter desired price: ");
                             double desiredPrice = inputMachine.nextDouble();
                             buyOrder = new BuyOrder(stockName, desiredPrice, quantity);
                             if(OrderManager.receiveOrder(buyOrder)) {
@@ -56,7 +56,7 @@ public class TradeLogicUnit implements LogicUnit{
                             }
                         }
                         case 2 -> {
-                            System.out.println("Enter desired price: ");
+                            System.out.print("Enter desired price: ");
                             double desiredPrice = inputMachine.nextDouble();
                             sellOrder = new SellOrder(stockName, desiredPrice, quantity);
                             if (OrderManager.receiveOrder(sellOrder)) {
