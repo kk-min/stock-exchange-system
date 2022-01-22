@@ -1,5 +1,9 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import logicunit.*;
+import menu.*;
+
 /**
  * Main application that hosts the logic for the main menu.
  * @author  Min
@@ -7,6 +11,11 @@ import java.util.Scanner;
  * @since   2022-01-18
  */
 public class MainApp {
+    /**
+     * The Main application.
+     * @param args
+     * @throws InputMismatchException When input types don't match
+     */
     public static void main(String[] args) throws InputMismatchException{
         Scanner mainInputMachine = new Scanner(System.in);
         LogicUnit TradeSystem = new TradeLogicUnit();
