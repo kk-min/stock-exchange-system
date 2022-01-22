@@ -41,6 +41,16 @@ public class BuyOrder extends Order{
             return;
         }
 
+        else if ((this.orderType == TYPE.MARKET) && (sellOrder.getOrderType() == TYPE.MARKET)){ // Both are market orders
+            if(!pendingBuyList.contains(this)){
+                    this.price = Double.MAX_VALUE; // Since we are buying at market value, any sell price is acceptable so we put our buy price at maximum
+            }
+            pendingBuyList.add(this);
+            Collections.sort(pendingBuyList);
+            Collections.reverse(pendingBuyList);
+            return;
+        }
+
         double sellQuantity = sellOrder.getQuantityTotal() - sellOrder.getQuantityFulfilled();
         double buyQuantity = this.quantityTotal - this.quantityFulfilled;
 

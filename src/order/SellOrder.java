@@ -42,6 +42,15 @@ public class SellOrder extends Order{
             return;
         }
 
+        if ((this.orderType == TYPE.MARKET) && (buyOrder.getOrderType() == TYPE.MARKET)){ // Both are market orders
+            if (!pendingSellList.contains(this)) {
+                this.price = -1;
+                pendingSellList.add(this);
+                Collections.sort(pendingSellList);
+            }
+            return;
+        }
+
         double buyQuantity = buyOrder.getQuantityTotal() - buyOrder.getQuantityFulfilled();
         double sellQuantity = this.quantityTotal-this.quantityFulfilled;
 

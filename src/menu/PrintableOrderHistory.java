@@ -50,6 +50,7 @@ public class PrintableOrderHistory implements Printable{
                     case PENDING -> System.out.printf("%d. %s %s %s $%.2f %.0f/%.0f PENDING\n", entryNumber, entry.getStockName(), type, buyOrSell, entry.getPrice(), entry.getQuantityFulfilled(), entry.getQuantityTotal());
                 }
             }
+            entryNumber++;
         }
     }
 }

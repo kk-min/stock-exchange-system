@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Stock-Exchange-System.iml" filepath="$PROJECT_DIR$/.idea/Stock-Exchange-System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/stockexchangesystem.iml" filepath="$PROJECT_DIR$/.idea/stockexchangesystem.iml" />
     </modules>
   </component>
 </project>
