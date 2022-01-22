@@ -18,6 +18,7 @@ public class MainApp {
                 MenuManager.printMainMenu();
                 System.out.print("Select an option: ");
                 userInput = inputMachine.nextInt();
+                inputMachine.nextLine();
                 switch (userInput) {
                     case 1: // Create an order
                         TradeSystem.executeLogic();

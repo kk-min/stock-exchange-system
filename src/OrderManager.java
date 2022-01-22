@@ -44,6 +44,9 @@ public class OrderManager {
      */
     public static double getBid(String X){
         ArrayList<Order> buyList = pendingBuyOrders.get(X); // Get the pending buy orders for Stock X
+        if (buyList == null){
+            return -1;
+        }
         if(buyList.isEmpty()){
             return -1;
         }
@@ -63,6 +66,9 @@ public class OrderManager {
      */
     public static double getAsk(String X){
         ArrayList<Order> sellList = pendingSellOrders.get(X); // Get the pending sell orders for Stock X
+        if(sellList == null){
+            return -1;
+        }
         if(sellList.isEmpty()){
             return -1;
         }

@@ -38,7 +38,7 @@ public class PrintableQuote implements Printable {
             if (ask == -1){
                 if(bid == -1){
                     //All 3 are absent.
-                    System.out.printf("No records for %s found.", this.stockName);
+                    System.out.printf("No records for %s found.\n", this.stockName);
                     return;
                 }
                 else{
