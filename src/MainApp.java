@@ -7,8 +7,8 @@ import java.util.Scanner;
  * @since   2022-01-18
  */
 public class MainApp {
-    public static void main(String[] args) {
-        Scanner inputMachine = new Scanner(System.in);
+    public static void main(String[] args) throws InputMismatchException{
+        Scanner mainInputMachine = new Scanner(System.in);
         LogicUnit TradeSystem = new TradeLogicUnit();
         LogicUnit QuoteSystem = new QuoteLogicUnit();
 
@@ -17,8 +17,8 @@ public class MainApp {
             try {
                 MenuManager.printMainMenu();
                 System.out.print("Select an option: ");
-                userInput = inputMachine.nextInt();
-                inputMachine.nextLine();
+                userInput = mainInputMachine.nextInt();
+                mainInputMachine.nextLine();
                 switch (userInput) {
                     case 1: // Create an order
                         TradeSystem.executeLogic();
@@ -36,8 +36,8 @@ public class MainApp {
                 }
             }
             catch(InputMismatchException e){
-                System.out.println("Invalid input!");
-                inputMachine.nextLine();
+                System.out.println("Invalid input! Please try again.");
+                mainInputMachine.next();
             }
         }
     }

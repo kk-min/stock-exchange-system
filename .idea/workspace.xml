@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Test Cases/Test_Case_1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Stock-Exchange-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Stock-Exchange-System.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Cases/Test_Case_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Test Cases/Test_Case_1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/OrderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/OrderManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Test_Case_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Test_Case_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/TradeLogicUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/TradeLogicUnit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PrintableQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableQuote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuoteLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuoteLogicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TradeLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TradeLogicUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -44,16 +46,30 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainApp">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="16" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -63,6 +79,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainAppTest" type="JUnit" factoryName="JUnit">
+      <module name="Stock-Exchange-System" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MainAppTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainApp" />
+      <item itemvalue="JUnit.MainAppTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp" />
