@@ -1,7 +1,9 @@
-import java.sql.SQLOutput;
-import java.util.Scanner;
-
+/**
+ * A logic unit that handles user inputs for creating orders and communicating with OrderManager.
+ */
 public class TradeLogicUnit implements LogicUnit{
+
+
 
     @Override
     public void executeLogic(){

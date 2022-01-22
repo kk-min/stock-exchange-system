@@ -99,14 +99,19 @@ public abstract class Order implements Comparable<Order>{
     }
 
     /**
-     * Executes the trade with a matching buy/sell order.
-     * @param X The matching buy/sell order
-     * @return true: the order has been completely fulfilled. false: the order has been partially
-     *
-     * fulfilled.
+     * Execute this order's trade with a corresponding buy/sell order, updating relevant quantities and lists in OrderManager
+     * @param X The matching Buy/Sell Order
+     * @param pendingBuyList The pending Buy list in OrderManager
+     * @param pendingSellList The pending Sell List in OrderManager
      */
     public abstract void executeTrade(Order X, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
 
+    /**
+     * Finds a matching buy/sell order available
+     * @param pendingBuyList The pending Buy list in OrderManager
+     * @param pendingSellList The pending Sell List in OrderManager
+     * @return The matching order
+     */
     public abstract Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
     public void setQuantityFulfilled(double quantityFulfilled) {
         this.quantityFulfilled = quantityFulfilled;
@@ -116,8 +121,17 @@ public abstract class Order implements Comparable<Order>{
         this.orderStatus = newStatus;
     }
 
+    /**
+     * Returns a string identifying whether the order is buy or sell.
+     * @return String identifying whether the order is buy or sell.
+     */
     public abstract String identify();
 
+    /**
+     * Compares another order's price with this order's price. Used for sorting Orders by price in pending Order lists.
+     * @param anotherOrder Another order to compare with
+     * @return -1 if this order's price is lower, 0 if equal, 1 if greater
+     */
     public int compareTo(Order anotherOrder){
         return Double.compare(this.price, anotherOrder.getPrice());
     }

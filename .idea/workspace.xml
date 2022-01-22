@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuyOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SellOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/QuoteLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuoteLogicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TradeLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TradeLogicUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RunManager" selected="Application.MainApp">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
