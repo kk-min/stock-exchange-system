@@ -1,8 +1,14 @@
 import java.util.HashMap;
 
+/**
+ * Class that tracks the last traded price of stocks.
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public class StockManager {
     /**
-     * A HashMap that keeps track of the last traded price (QUOTE) of a particular stock.
+     * A HashMap that keeps track of the last traded price of a particular stock.
      */
     private static HashMap<String, Double> quoteInfo = new HashMap<String, Double>();
 

@@ -1,7 +1,19 @@
 import java.util.ArrayList;
-
+/**
+ * Order class that contains information about a particular trade request.
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public abstract class Order implements Comparable<Order>{
+    /**
+     * Enum that tags the current status of an order.
+     */
     public enum STATUS{PENDING, PARTIAL, FILLED};
+
+    /**
+     * Enum that tags the type of trade the order is trying to fulfill.
+     */
     public enum TYPE{MARKET, LIMIT};
     /**
      * The status of the order, whether it is not fulfilled (PENDING), partially fulfilled (PARTIAL) or completely fulfilled (FILLED).
@@ -90,10 +102,18 @@ public abstract class Order implements Comparable<Order>{
         return this.quantityFulfilled;
     }
 
+    /**
+     * Returns the name of the stock being traded by this order.
+     * @return Name of the stock being traded
+     */
     public String getStockName() {
         return stockName;
     }
 
+    /**
+     * Return the current status (PENDING, PARTIAL, FILLED) of this order.
+     * @return Status of the order
+     */
     public STATUS getOrderStatus() {
         return orderStatus;
     }
@@ -113,10 +133,19 @@ public abstract class Order implements Comparable<Order>{
      * @return The matching order
      */
     public abstract Order findMatchingOrder(ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList);
+
+    /**
+     * Updates the total quantity fulfilled of the stock in this order
+     * @param quantityFulfilled Current stock quantity that has been successfully traded in this order
+     */
     public void setQuantityFulfilled(double quantityFulfilled) {
         this.quantityFulfilled = quantityFulfilled;
     }
 
+    /**
+     * Changes the status of this order. (PENDING, PARTIAL, FILLED)
+     * @param newStatus Status of the order
+     */
     public void setOrderStatus(STATUS newStatus){
         this.orderStatus = newStatus;
     }

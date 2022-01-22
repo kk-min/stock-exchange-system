@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+/**
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public class SellOrder extends Order{
     /**
      * Constructor for SellOrder. (Limit Order)
@@ -85,6 +90,7 @@ public class SellOrder extends Order{
         return null;
     }
 
+    @Override
     public String identify(){
         return "SELL";
     }

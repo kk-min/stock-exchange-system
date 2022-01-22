@@ -1,5 +1,9 @@
+/**
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public class PrintableMainMenu implements Printable{
-
 
     public void print(){
         System.out.println("Welcome to Min's Simple Stock Exchange Program.");

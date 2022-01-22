@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public class BuyOrder extends Order{
     /**
      * Constructor for the BuyOrder class. (Limit Order)
@@ -85,6 +90,7 @@ public class BuyOrder extends Order{
         return null;
     }
 
+    @Override
     public String identify(){
         return "BUY";
     }

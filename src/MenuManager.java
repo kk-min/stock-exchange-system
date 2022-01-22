@@ -1,3 +1,10 @@
+/**
+ * Manages all functions pertaining to printing menus on the terminal.
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
+
 public class MenuManager {
 
     /**
@@ -17,7 +24,7 @@ public class MenuManager {
     }
 
     /**
-     * Prints the list of all orders made.
+     * Prints the list of all orders made. Returns an error message if there are no orders to view.
      */
     public static void printOrderHistory(){
         Printable printer = new PrintableOrderHistory();

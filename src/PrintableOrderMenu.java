@@ -1,3 +1,9 @@
+/**
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
+
 public class PrintableOrderMenu implements Printable{
 
     public void print(){

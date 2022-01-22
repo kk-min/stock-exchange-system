@@ -1,16 +1,37 @@
-import java.util.Scanner;
-
+/**
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public class PrintableQuote implements Printable {
+    /**
+     * The name of the stock to print quote
+     */
     String stockName;
+    /**
+     * The current highest buy price for the stock
+     */
     double bid;
+    /**
+     * The current lowest sell price for the stock
+     */
     double ask;
+    /**
+     * The last traded value of the stock
+     */
     double quote;
+
+    /**
+     * Constructor for PrintableQuote class.
+     * @param X Name of the stock
+     */
     public PrintableQuote(String X){
         this.stockName = X;
         this.bid = OrderManager.getBid(X);
         this.ask = OrderManager.getAsk(X);
         this.quote = StockManager.getQuote(X);
     }
+
     public void print(){
         // There are 8 possible combinations for bid, ask and quote where each variable can either be present or absent.
         if (quote == -1){

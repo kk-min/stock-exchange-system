@@ -1,9 +1,10 @@
 /**
  * A logic unit that handles user inputs for creating orders and communicating with OrderManager.
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
  */
 public class TradeLogicUnit implements LogicUnit{
-
-
 
     @Override
     public void executeLogic(){

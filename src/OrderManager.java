@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * The OrderManager Class
  * Manages various functionalities pertaining to Order objects.
  * @author  Min
  * @version 1.0
@@ -37,6 +36,7 @@ public class OrderManager {
     public static ArrayList<Order> getOrderHistory(){
          return orderHistory;
      }
+
     /**
      * Returns the current highest pending buy price
      * @param X The stock that we want to check the buy price for. Returns -1 if none is found.
@@ -100,6 +100,4 @@ public class OrderManager {
         addToOrderHistory(X);
         return true;
     }
-
-
 }

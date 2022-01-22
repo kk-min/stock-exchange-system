@@ -3,10 +3,40 @@
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/BuyOrder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/BuyOrder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/BuyOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/BuyOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/LogicUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/LogicUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/MenuManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/MenuManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Order$STATUS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Order$STATUS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Order$TYPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Order$TYPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/OrderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/OrderManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableMainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableOrderHistory$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableOrderHistory$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableOrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableOrderHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableOrderMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableOrderMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableQuote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/PrintableQuote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/QuoteLogicUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/QuoteLogicUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/SellOrder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/SellOrder$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/SellOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/SellOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/Stock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/StockManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/StockManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stock-Exchange-System/TradeLogicUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stock-Exchange-System/TradeLogicUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BuyOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Printable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrintableMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrintableOrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableOrderHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrintableOrderMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableOrderMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PrintableQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PrintableQuote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/QuoteLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuoteLogicUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SellOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StockManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StockManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TradeLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TradeLogicUnit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

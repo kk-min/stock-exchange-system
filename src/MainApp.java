@@ -1,5 +1,10 @@
 import java.util.Scanner;
-
+/**
+ * Main application that hosts the logic for the main menu.
+ * @author  Min
+ * @version 1.0
+ * @since   2022-01-18
+ */
 public class MainApp {
     public static void main(String args[]){
         Scanner inputMachine = new Scanner(System.in);
