@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 /**
  * A logic unit that handles user input for viewing stock information and communicates with MenuManager.
  * @author  Min
@@ -7,7 +9,7 @@
 public class QuoteLogicUnit implements LogicUnit{
 
     @Override
-    public void executeLogic() {
+    public void executeLogic() throws InputMismatchException {
         System.out.print("Enter name of stock to enquire quote: ");
         String stockName = inputMachine.next();
         MenuManager.printQuote(stockName);

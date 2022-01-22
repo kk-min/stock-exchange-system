@@ -44,6 +44,9 @@ public class OrderManager {
      */
     public static double getBid(String X){
         ArrayList<Order> buyList = pendingBuyOrders.get(X); // Get the pending buy orders for Stock X
+        if(buyList.isEmpty()){
+            return -1;
+        }
         double maxPrice = -1; // Actual stock price will never go below 0, so we can set initialize with -1 as the minimum
         for (Order pendingOrder : buyList){
             if(pendingOrder.getPrice() > maxPrice){
@@ -60,6 +63,9 @@ public class OrderManager {
      */
     public static double getAsk(String X){
         ArrayList<Order> sellList = pendingSellOrders.get(X); // Get the pending sell orders for Stock X
+        if(sellList.isEmpty()){
+            return -1;
+        }
         double minimumPrice = Double.MAX_VALUE;
         for (Order pendingOrder : sellList) {
             if(pendingOrder.getPrice() < minimumPrice){
@@ -91,11 +97,13 @@ public class OrderManager {
         }
 
         Order matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
+        /**
         if ((matchingOrder == null) && (X.getOrderType() == Order.TYPE.MARKET)){
             // If there is no matching order and it was a market order, we need to reject.
             System.out.println("There are currently no available trades for this stock.");
             return false;
         }
+         **/
         X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
         addToOrderHistory(X);
         return true;

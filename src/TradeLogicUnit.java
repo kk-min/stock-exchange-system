@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 /**
  * A logic unit that handles user inputs for creating orders and communicating with OrderManager.
  * @author  Min
@@ -7,7 +9,7 @@
 public class TradeLogicUnit implements LogicUnit{
 
     @Override
-    public void executeLogic(){
+    public void executeLogic() throws InputMismatchException {
         int userInput = -1;
         while(userInput != 3){
             String stockName;
@@ -17,7 +19,7 @@ public class TradeLogicUnit implements LogicUnit{
             double quantity;
 
             MenuManager.printOrderMenu();
-            System.out.println("Select Option: ");
+            System.out.print("Select Option: ");
             userInput = inputMachine.nextInt();
             switch(userInput){
                 case 1: // Buy a stock
@@ -27,6 +29,11 @@ public class TradeLogicUnit implements LogicUnit{
                     typeSelection = inputMachine.nextInt();
                     System.out.print("Enter quantity of stock to buy: ");
                     quantity = inputMachine.nextDouble();
+                    if(quantity < 0){ // We cannot order a quantity less than 0
+                        System.out.println("Invalid quantity! Please try again.");
+                        System.out.println();
+                        break;
+                    }
                     switch (typeSelection) {
                         case 1 -> {
                             buyOrder = new BuyOrder(stockName, quantity);
@@ -37,6 +44,10 @@ public class TradeLogicUnit implements LogicUnit{
                         case 2 -> {
                             System.out.print("Enter desired price: ");
                             double desiredPrice = inputMachine.nextDouble();
+                            if (desiredPrice < 0){
+                                System.out.println("Invalid price! Please try again.");
+                                System.out.println();
+                            }
                             buyOrder = new BuyOrder(stockName, desiredPrice, quantity);
                             if(OrderManager.receiveOrder(buyOrder)) {
                                 System.out.printf("You have placed a limit buy order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
@@ -51,6 +62,10 @@ public class TradeLogicUnit implements LogicUnit{
                     typeSelection = inputMachine.nextInt();
                     System.out.print("Enter quantity of stock to sell: ");
                     quantity = inputMachine.nextDouble();
+                    if(quantity < 0){
+                        System.out.println("Invalid quantity! Please try again.");
+                        System.out.println();
+                    }
                     switch (typeSelection) {
                         case 1 -> {
                             sellOrder = new SellOrder(stockName, quantity);
@@ -61,6 +76,10 @@ public class TradeLogicUnit implements LogicUnit{
                         case 2 -> {
                             System.out.print("Enter desired price: ");
                             double desiredPrice = inputMachine.nextDouble();
+                            if (desiredPrice < 0){
+                                System.out.println("Invalid price! Please try again.");
+                                System.out.println();
+                            }
                             sellOrder = new SellOrder(stockName, desiredPrice, quantity);
                             if (OrderManager.receiveOrder(sellOrder)) {
                                 System.out.printf("You have placed a limit sell order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
@@ -74,5 +93,6 @@ public class TradeLogicUnit implements LogicUnit{
                     System.out.println("Invalid choice. Try again.");
             }
         }
+        System.out.println("---------------");
     }
 }

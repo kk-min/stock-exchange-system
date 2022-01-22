@@ -30,6 +30,9 @@ public class SellOrder extends Order{
     @Override
     public void executeTrade(Order buyOrder, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){
         if (buyOrder == null){
+            if(this.orderType == TYPE.MARKET){
+                this.price = -1; // Since we are selling at market value, any buy value above or equal to 0 is acceptable
+            }
             if (!pendingSellList.contains(this)) {
                 pendingSellList.add(this);
                 Collections.sort(pendingSellList);

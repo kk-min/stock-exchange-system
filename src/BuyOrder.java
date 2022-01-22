@@ -30,6 +30,9 @@ public class BuyOrder extends Order{
     public void executeTrade(Order sellOrder, ArrayList<Order> pendingBuyList, ArrayList<Order> pendingSellList){ // Assume a matching sell order has already been found
         if (sellOrder == null){
             if(!pendingBuyList.contains(this)){
+                if(this.orderType == TYPE.MARKET){
+                    this.price = Double.MAX_VALUE; // Since we are buying at market value, any sell price is acceptable so we put our buy price at maximum
+                }
                 pendingBuyList.add(this);
                 Collections.sort(pendingBuyList);
                 Collections.reverse(pendingBuyList);

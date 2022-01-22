@@ -31,6 +31,11 @@ public class StockManager {
      * @param price The newest price of Stock X
      */
     public static void updateQuote(String X, double price){
-        quoteInfo.replace(X, price);
+        if(quoteInfo.containsKey(X)){
+            quoteInfo.replace(X, price);
+        }
+        else{
+            quoteInfo.put(X, price);
+        }
     }
 }
