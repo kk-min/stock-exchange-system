@@ -34,13 +34,16 @@ public class TradeLogicUnit implements LogicUnit{
                             System.out.print("Select an option:\n1. Market Order  |  2. Limit Order\n");
                             typeSelection = inputMachine.nextInt();
                             inputMachine.nextLine();
+                            if ((typeSelection != 1)&&(typeSelection != 2)){
+                                System.out.println("Invalid choice! Please try again.");
+                                continue;
+                            }
                             System.out.print("Enter quantity of stock to buy: ");
                             quantity = inputMachine.nextDouble();
                             inputMachine.nextLine();
                             if (quantity < 0) { // We cannot order a quantity less than 0
                                 System.out.println("Invalid quantity! Please try again.");
-                                System.out.println();
-                                break;
+                                continue;
                             }
                             switch (typeSelection) {
                                 case 1 -> {
@@ -55,7 +58,7 @@ public class TradeLogicUnit implements LogicUnit{
                                     inputMachine.nextLine();
                                     if (desiredPrice < 0) {
                                         System.out.println("Invalid price! Please try again.");
-                                        System.out.println();
+                                        continue;
                                     }
                                     buyOrder = new BuyOrder(stockName, desiredPrice, quantity);
                                     if (OrderManager.receiveOrder(buyOrder)) {
@@ -70,13 +73,17 @@ public class TradeLogicUnit implements LogicUnit{
                             inputMachine.nextLine();
                             System.out.print("Select an option:\n1. Market Order  |  2. Limit Order\n");
                             typeSelection = inputMachine.nextInt();
+                            if ((typeSelection != 1)&&(typeSelection != 2)){
+                                System.out.println("Invalid choice! Please try again.");
+                                continue;
+                            }
                             inputMachine.nextLine();
                             System.out.print("Enter quantity of stock to sell: ");
                             quantity = inputMachine.nextDouble();
                             inputMachine.nextLine();
                             if (quantity < 0) {
                                 System.out.println("Invalid quantity! Please try again.");
-                                System.out.println();
+                                continue;
                             }
                             switch (typeSelection) {
                                 case 1 -> {
@@ -91,7 +98,7 @@ public class TradeLogicUnit implements LogicUnit{
                                     inputMachine.nextLine();
                                     if (desiredPrice < 0) {
                                         System.out.println("Invalid price! Please try again.");
-                                        System.out.println();
+                                        continue;
                                     }
                                     sellOrder = new SellOrder(stockName, desiredPrice, quantity);
                                     if (OrderManager.receiveOrder(sellOrder)) {
@@ -104,6 +111,7 @@ public class TradeLogicUnit implements LogicUnit{
                             return;
                         default:
                             System.out.println("Invalid choice. Try again.");
+                            continue;
                     }
                     System.out.println("---------------");
             }catch(InputMismatchException e){

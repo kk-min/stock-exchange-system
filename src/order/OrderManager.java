@@ -53,9 +53,12 @@ public class OrderManager {
         }
         double maxPrice = -1; // Actual stock price will never go below 0, so we can set initialize with -1 as the minimum
         for (Order pendingOrder : buyList){
-            if(pendingOrder.getPrice() > maxPrice){
+            if((pendingOrder.getPrice() > maxPrice)&&(pendingOrder.getPrice() != Double.MAX_VALUE)){
                 maxPrice = pendingOrder.getPrice(); // Update the max price if a higher one is found in the pending buy list
             }
+        }
+        if(maxPrice == Double.MAX_VALUE){
+            return -1;
         }
         return maxPrice;
     }
@@ -75,7 +78,7 @@ public class OrderManager {
         }
         double minimumPrice = Double.MAX_VALUE;
         for (Order pendingOrder : sellList) {
-            if(pendingOrder.getPrice() < minimumPrice){
+            if((pendingOrder.getPrice() < minimumPrice)&&(pendingOrder.getPrice() != -1)){
                 minimumPrice = pendingOrder.getPrice(); // Update the minimum price if a lower one is found in the pending list
             }
         }
@@ -104,14 +107,12 @@ public class OrderManager {
         }
 
         Order matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
-        /**
-        if ((matchingOrder == null) && (X.getOrderType() == Order.TYPE.MARKET)){
-            // If there is no matching order and it was a market order, we need to reject.
-            System.out.println("There are currently no available trades for this stock.");
-            return false;
-        }
-         **/
         X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
+        // If our trade is still not completely filled, and there are still matching orders in the pending list:
+        while ((matchingOrder != null)&&(X.getQuantityFulfilled() > 0)){
+            matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
+            X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
+        }
         addToOrderHistory(X);
         return true;
     }
