@@ -53,7 +53,7 @@ public class OrderManager {
         }
         double maxPrice = -1; // Actual stock price will never go below 0, so we can set initialize with -1 as the minimum
         for (Order pendingOrder : buyList){
-            if(pendingOrder.getPrice() > maxPrice){
+            if((pendingOrder.getPrice() > maxPrice)&&(pendingOrder.getPrice() != Double.MAX_VALUE)){
                 maxPrice = pendingOrder.getPrice(); // Update the max price if a higher one is found in the pending buy list
             }
         }
@@ -78,7 +78,7 @@ public class OrderManager {
         }
         double minimumPrice = Double.MAX_VALUE;
         for (Order pendingOrder : sellList) {
-            if(pendingOrder.getPrice() < minimumPrice){
+            if((pendingOrder.getPrice() < minimumPrice)&&(pendingOrder.getPrice() != -1)){
                 minimumPrice = pendingOrder.getPrice(); // Update the minimum price if a lower one is found in the pending list
             }
         }

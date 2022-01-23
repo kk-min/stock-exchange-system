@@ -11,18 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2b8912bb-fc25-4c1f-b44c-e114295b8799" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/logicunit/TradeLogicUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/logicunit/TradeLogicUnit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/menu/PrintableQuote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/menu/PrintableQuote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/order/BuyOrder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/order/BuyOrder$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/order/BuyOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/order/BuyOrder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/order/OrderManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/order/OrderManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/order/SellOrder$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/order/SellOrder$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/stockexchangesystem/order/SellOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/stockexchangesystem/order/SellOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logicunit/TradeLogicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/logicunit/TradeLogicUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/PrintableQuote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/PrintableQuote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/order/BuyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/order/BuyOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/order/OrderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/order/OrderManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/order/SellOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/order/SellOrder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
