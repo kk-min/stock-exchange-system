@@ -73,6 +73,7 @@ public class SellOrder extends Order{
             this.quantityFulfilled = buyQuantity;
             this.orderStatus = STATUS.PARTIAL;
             if(!pendingSellList.contains(this)){
+                this.price = -1;
                 pendingSellList.add(this);
                 Collections.sort(pendingSellList);
             }
@@ -81,7 +82,7 @@ public class SellOrder extends Order{
             buyOrder.setOrderStatus(STATUS.FILLED);
             pendingBuyList.remove(buyOrder);
         }
-        StockManager.updateQuote(this.stockName, this.price);
+        StockManager.updateQuote(this.stockName, buyOrder.getPrice());
     }
 
     @Override

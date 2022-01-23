@@ -72,6 +72,7 @@ public class BuyOrder extends Order{
             this.quantityFulfilled += sellQuantity;
             this.orderStatus = STATUS.PARTIAL;
             if(!pendingBuyList.contains(this)){
+                this.price = Double.MAX_VALUE;
                 pendingBuyList.add(this);
                 Collections.sort(pendingBuyList);
                 Collections.reverse(pendingBuyList);
@@ -81,7 +82,7 @@ public class BuyOrder extends Order{
             sellOrder.setOrderStatus(STATUS.FILLED);
             pendingSellList.remove(sellOrder);
         }
-        StockManager.updateQuote(this.stockName, this.price); // Update the latest order for this stock in Stock Manager
+        StockManager.updateQuote(this.stockName, sellOrder.getPrice()); // Update the latest order for this stock in Stock Manager
     }
 
     @Override
