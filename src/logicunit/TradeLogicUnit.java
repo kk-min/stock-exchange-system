@@ -50,6 +50,7 @@ public class TradeLogicUnit implements LogicUnit{
                                     buyOrder = new BuyOrder(stockName, quantity);
                                     if (OrderManager.receiveOrder(buyOrder)) {
                                         System.out.printf("You have placed a market buy order for %.2f %s shares.\n", quantity, stockName);
+                                        continue;
                                     }
                                 }
                                 case 2 -> {
@@ -63,6 +64,7 @@ public class TradeLogicUnit implements LogicUnit{
                                     buyOrder = new BuyOrder(stockName, desiredPrice, quantity);
                                     if (OrderManager.receiveOrder(buyOrder)) {
                                         System.out.printf("You have placed a limit buy order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
+                                        continue;
                                     }
                                 }
                             }
@@ -90,6 +92,7 @@ public class TradeLogicUnit implements LogicUnit{
                                     sellOrder = new SellOrder(stockName, quantity);
                                     if (OrderManager.receiveOrder(sellOrder)) {
                                         System.out.printf("You have placed a market sell order for %.2f %s shares.\n", quantity, stockName);
+                                        continue;
                                     }
                                 }
                                 case 2 -> {
@@ -103,6 +106,7 @@ public class TradeLogicUnit implements LogicUnit{
                                     sellOrder = new SellOrder(stockName, desiredPrice, quantity);
                                     if (OrderManager.receiveOrder(sellOrder)) {
                                         System.out.printf("You have placed a limit sell order for %.2f %s shares at $%.2f each.\n", quantity, stockName, desiredPrice);
+                                        continue;
                                     }
                                 }
                             }

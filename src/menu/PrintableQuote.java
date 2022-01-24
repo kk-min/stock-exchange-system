@@ -81,6 +81,6 @@ public class PrintableQuote implements Printable {
             return;
         }
         //All are present:
-        System.out.printf("%s BID: $%.2f ASK:$ %.2f LAST: $%2f\n", this.stockName, this.bid, this.ask, this.quote);
+        System.out.printf("%s BID: $%.2f ASK: $%.2f LAST: $%.2f\n", this.stockName, this.bid, this.ask, this.quote);
     }
 }

@@ -1,4 +1,5 @@
 package order;
+import javax.naming.LimitExceededException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -72,7 +73,9 @@ public class BuyOrder extends Order{
             this.quantityFulfilled += sellQuantity;
             this.orderStatus = STATUS.PARTIAL;
             if(!pendingBuyList.contains(this)){
-                this.price = Double.MAX_VALUE;
+                if(this.orderType == TYPE.MARKET){
+                    this.price = Double.MAX_VALUE;
+                }
                 pendingBuyList.add(this);
                 Collections.sort(pendingBuyList);
                 Collections.reverse(pendingBuyList);
@@ -82,7 +85,13 @@ public class BuyOrder extends Order{
             sellOrder.setOrderStatus(STATUS.FILLED);
             pendingSellList.remove(sellOrder);
         }
-        StockManager.updateQuote(this.stockName, sellOrder.getPrice()); // Update the latest order for this stock in Stock Manager
+        // Update the latest order for this stock in Stock Manager:
+        if (this.orderType == TYPE.LIMIT){
+            StockManager.updateQuote(this.stockName, this.price);
+        }
+        else{
+            StockManager.updateQuote(this.stockName, sellOrder.getPrice());
+        }
     }
 
     @Override

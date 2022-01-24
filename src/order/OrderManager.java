@@ -109,7 +109,7 @@ public class OrderManager {
         Order matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
         X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
         // If our trade is still not completely filled, and there are still matching orders in the pending list:
-        while ((matchingOrder != null)&&(X.getQuantityFulfilled() > 0)){
+        while ((matchingOrder != null)&&(X.getQuantityFulfilled() != X.getQuantityTotal())){
             matchingOrder = X.findMatchingOrder(pendingBuyList, pendingSellList);
             X.executeTrade(matchingOrder, pendingBuyList, pendingSellList);
         }
