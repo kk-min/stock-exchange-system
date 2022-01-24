@@ -2,7 +2,7 @@
 _Copyright © 2022 Min Kabar Kyaw_
 ## Running the program
 
-<i> Requirements:<b>
+<i> Requirements:<br>
     [Java JDK](https://www.oracle.com/java/technologies/downloads/#jdk17-windows)<br>
     [Environment variable set up to use java in terminal](https://www.ibm.com/docs/en/b2b-integrator/5.2?topic=installation-setting-java-variables-in-windows)
     </i>
