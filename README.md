@@ -1,5 +1,5 @@
 # Min's Simple Stock Exchange System
-_Copyright © 2022 Min Kabar Kyaw_
+_Copyright © 2023 Min Kabar Kyaw_
 ## Running the program
 
 <i> Requirements:<br>
